@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name TSDZ2-ESP32-Alt)(type KiCad)(uri ${KIPRJMOD}/Libraries/Footprints/TSDZ2-ESP32-Alt.pretty)(options "")(descr ""))
+)

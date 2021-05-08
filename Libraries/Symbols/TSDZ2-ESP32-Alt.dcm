@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Ai-Thinker-CP2102
+F https://datasheet.lcsc.com/lcsc/Ai-Thinker-CP2102_C192392.pdf
+$ENDCMP
+#
+$CMP SN74LVC2G17DBVR
+D Dual Buffer Schmitt Triggered, Low-Voltage CMOS
+K Dual Buffer Schmitt LVC CMOS
+F https://datasheet.lcsc.com/lcsc/Texas-Instruments-TI-SN74LVC2G17DBVR_C10429.pdf
+$ENDCMP
+#
+#End Doc Library
