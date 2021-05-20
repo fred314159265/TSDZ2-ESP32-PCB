@@ -1,8 +1,8 @@
-# BT Interface for TSDZ2 Open Source Firmware
+# Alternative TSDZ2-ESP32 Bluetooth PCB
 
-⚠⚠⚠ The current revision of this board is untested and requires a firmware update for full functionality - not fit for use *yet*! ⚠⚠⚠
+⚠⚠⚠ This is current untested - not fit for use *yet*! ⚠⚠⚠
 
-This repository is an updated version of MSpider65's [TSDZ2-ESP32-PCB](https://github.com/TSDZ2-ESP32/TSDZ2-ESP32-PCB) project. If you are not familiar with the original project, it is a PCB and some custom firmware (plus Android app) that make the TSDZ2 eBike mid-drive kit smarter (fully customisable settings, log power, speed, etc.) and higher performance. It's a really fantastic project and definitely worth checking out if you're considering the TSDZ2 kit.
+This repository is an updated version of MSpider65's [TSDZ2-ESP32-PCB](https://github.com/TSDZ2-ESP32/TSDZ2-ESP32-PCB) project. If you are not familiar with the original project, it is a PCB and some custom firmware (plus Android app) that make the TSDZ2 eBike mid-drive kit smarter (fully customisable settings, log power, speed, etc.) and higher performance. It's a really fantastic project and definitely worth checking out if you're considering the TSDZ2 eBike mid-drive kit.
 
 For more information on the project, see Mspider65's wiki page: [wiki.](https://github.com/TSDZ-ESP32/TSDZ-ESP32-wiki/wiki)
 
@@ -16,9 +16,11 @@ This update aims to make it more affordable (~$12 vs ~$23 for components). It al
 
 - 5V and 3.3V regulator changes - cost savings.
 
-- Programming header now uses RST and GPIO0 pins directly (no need for jumpers), with the intention of using RTS and CTS lines of USB-to-serial adaptor to automate putting ESP32 in bootloader mode. More information can be found [here](https://github.com/espressif/esptool/wiki/ESP32-Boot-Mode-Selection#automatic-bootloader).
+- Programming header now uses RST and GPIO0 pins directly (no need for jumpers), with the intention of using RTS and CTS lines of a USB-to-serial adaptor to automate putting the ESP32 in bootloader mode. More information can be found [here](https://github.com/espressif/esptool/wiki/ESP32-Boot-Mode-Selection#automatic-bootloader).
+  
   TLDR: connect RST and GPIO0 pins to USB-to-serial adaptor like so, and programming should "just work". 
-  ⚠ **Make sure you only power the board via 3.3V! **⚠
+  
+  ⚠ **Make sure you only power the board via 3.3V!** ⚠
   
   | Programming Header Pin | USB-to-serial Pin |
   | ---------------------- | ----------------- |
@@ -45,7 +47,7 @@ I have use the original design and it works very well. After needing another PCB
 
 #### What's with the bit of the PCB sticking out?
 
-This is for programming the ESP32 with the USB-to-serial adaptor. Once the ESP32 has been programmed, but the tracks on the top and the bottom with a knife and then snap it off. MSpider65's project allows OTA (over-the-air) firmware updates so you won't be needing it again.
+This is for programming the ESP32 with a USB-to-serial adaptor. Once the ESP32 has been programmed, cut the tracks on the top and the bottom with a knife and then snap it off. MSpider65's project allows OTA (over-the-air) firmware updates so you won't be needing it again.
 
 #### I successfully programmed the ESP32 but the board won't turn on when connected to battery power?
 
@@ -57,7 +59,9 @@ As part of the aim to keep cost to a minimum, all items can be sourced from [LCS
 
 #### How can I order the PCB?
 
-You can order the bare PCB from [JLCPCB](https://jlcpcb.com). You will need to select 4-layers, 0.8mm thickness and "JLC7629" controlled impedance. I also recommend getting a stencil and using solder paste. Example of suitable PCB options:
+You can order the bare PCB from [JLCPCB](https://jlcpcb.com). You will need to select 4-layers, 0.8mm thickness and "JLC7629" controlled impedance. I also recommend getting a stencil and using solder paste. 
+
+Example of suitable PCB options:
 
 <img src="Images\Example-PCB-Options.png" alt="PCB-Top" style="zoom: 67%;" />
 
@@ -65,9 +69,9 @@ You can order the bare PCB from [JLCPCB](https://jlcpcb.com). You will need to s
 
 #### How can I order the components?
 
-Upload "TSDZ2-ESP32-Alt_BOM.csv" to the "BOM tool" on LCSC [here](https://lcsc.com/bom.html#/upload). Only select quantity and part number columns. Be sure to adjust how many USB-to-serial adaptors you require before checking out. Also note that currently if you order the PCB before the components you can get a discount on postage with LCSC at checkout.
+Upload "TSDZ2-ESP32-Alt_BOM.csv" to the "BOM tool" on LCSC [here](https://lcsc.com/bom.html#/upload). Only select quantity and part number columns. Be sure to adjust how many USB-to-serial adaptors you require before checking out. Also note that currently if you order the PCB before the components (from JLCPCB) you can get a discount on postage with LCSC at checkout.
 
-#### How did you curve the track/add teardrops?
+#### How did you curve tracks/add teardrops?
 
 By using the [KiCAD round tracks](https://github.com/mitxela/kicad-round-tracks) and [teardrops](https://github.com/NilujePerchut/kicad_scripts/tree/master/teardrops) plugins.
 
